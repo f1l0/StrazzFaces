@@ -82,13 +82,17 @@ public class DockablePanelRenderer extends CoreRenderer {
     }
     
     private void encodeBeginTop(DockablePanel dockablepanelComponent, ResponseWriter writer) throws IOException {
+        String relative = "";
+        if(!dockablepanelComponent.isFullpage())
+            relative = "dockablepanel-relative ";
+
         // ExtPanel
         writer.startElement("div", dockablepanelComponent);
         writer.writeAttribute("id", dockablepanelComponent.getClientId(), null);
         if(Strings.isNotEmpty(dockablepanelComponent.getStyleClass()))
-            writer.writeAttribute("class", "dockablepanel dockablepanel-close ui-widget dockablepanel-"+ dockablepanelComponent.getPosition() 
+            writer.writeAttribute("class", relative +"dockablepanel dockablepanel-close ui-widget dockablepanel-"+ dockablepanelComponent.getPosition() 
                                           +" "+ dockablepanelComponent.getStyleClass(), null);
-        else writer.writeAttribute("class", "dockablepanel dockablepanel-close ui-widget dockablepanel-"+ dockablepanelComponent.getPosition(), null);
+        else writer.writeAttribute("class", relative +"dockablepanel dockablepanel-close ui-widget dockablepanel-"+ dockablepanelComponent.getPosition(), null);
 
         if(Strings.isNotEmpty(dockablepanelComponent.getStyle()))
             writer.writeAttribute("style", dockablepanelComponent.getStyle(), null);
@@ -100,13 +104,18 @@ public class DockablePanelRenderer extends CoreRenderer {
     }
 
     private void encodeBeginBottom(DockablePanel dockablepanelComponent, ResponseWriter writer) throws IOException {
+        String relative = "";
+
+        if(!dockablepanelComponent.isFullpage())
+            relative = "dockablepanel-relative ";
+
         // ExtPanel
         writer.startElement("div", dockablepanelComponent);
         writer.writeAttribute("id", dockablepanelComponent.getClientId(), null);
         if(Strings.isNotEmpty(dockablepanelComponent.getStyleClass()))
-            writer.writeAttribute("class", "dockablepanel dockablepanel-close ui-widget dockablepanel-"+ dockablepanelComponent.getPosition() 
+            writer.writeAttribute("class", relative +"dockablepanel dockablepanel-close ui-widget dockablepanel-"+ dockablepanelComponent.getPosition() 
                                           +" "+ dockablepanelComponent.getStyleClass(), null);
-        else writer.writeAttribute("class", "dockablepanel dockablepanel-close ui-widget dockablepanel-"+ dockablepanelComponent.getPosition(), null);
+        else writer.writeAttribute("class", relative +"dockablepanel dockablepanel-close ui-widget dockablepanel-"+ dockablepanelComponent.getPosition(), null);
 
         if(Strings.isNotEmpty(dockablepanelComponent.getStyle()))
             writer.writeAttribute("style", dockablepanelComponent.getStyle(), null);
