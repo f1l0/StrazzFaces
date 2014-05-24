@@ -42,7 +42,6 @@
     -webkit-animation: fadein 1s; /* Safari and Chrome */
     -o-animation: fadein 1s; /* Opera */
 }
-
 /* Position Top */
 .dockablepanel.dockablepanel-top .ui-shadow {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
@@ -131,4 +130,8 @@
 @-o-keyframes fadein { /* Opera */
     from { opacity: 0; }
     to { opacity: 1; }
+}
+/* Relative */
+.dockablepanel-relative.dockablepanel {
+    position: relative;
 }
