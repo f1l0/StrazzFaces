@@ -105,6 +105,14 @@ public class DockablePanel extends UIInput implements Widget, ClientBehaviorHold
         getStateHelper().put(PropertyKeys.onclose, onclose);
     }
 
+    public boolean isFullpage() {
+        return (boolean) getStateHelper().eval(PropertyKeys.fullpage, true);
+    }
+
+    public void setFullpage(boolean fullpage) {
+        getStateHelper().put(PropertyKeys.fullpage, fullpage);
+    }
+
     @Override
     public String resolveWidgetVar() {
         FacesContext context = getFacesContext();
@@ -116,6 +124,6 @@ public class DockablePanel extends UIInput implements Widget, ClientBehaviorHold
     }
 
     protected static enum PropertyKeys {
-        title, position, style, styleClass, onopen, onclose, widgetVar;
+        title, position, style, styleClass, fullpage, onopen, onclose, widgetVar;
     }
 }
