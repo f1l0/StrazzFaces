@@ -71,7 +71,7 @@ public class CountDownRenderer extends CoreRenderer {
         if(Strings.isNotEmpty(countdownComponent.getStyleClass()))
             writer.writeAttribute("class", "countdown ui-widget ui-widget-header ui-corner-all "+ countdownComponent.getStyleClass(), null);
         else writer.writeAttribute("class", "countdown ui-widget ui-widget-header ui-corner-all", null);
-        
+
         if(Strings.isNotEmpty(countdownComponent.getStyle()))
             writer.writeAttribute("style", countdownComponent.getStyle(), null);
         long seconds = (countdownComponent.getDate().getTime() - new Date().getTime()) / 1000;
