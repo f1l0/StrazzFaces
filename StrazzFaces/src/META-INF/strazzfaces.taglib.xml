@@ -213,6 +213,12 @@ In case it's a static text, it must refer to a converter id.]]></description>
             <type>java.lang.Boolean</type>
         </attribute>
         <attribute>
+            <description><![CDATA[Boolean value to specify the position of the Panel (fullpage or relative to the container). Default true.]]></description>
+            <name>fullpage</name>
+            <required>false</required>
+            <type>java.lang.Boolean</type>
+        </attribute>
+        <attribute>
             <description><![CDATA[An el expression referring to a server side UIComponent instance in a backing bean.]]></description>
             <name>binding</name>
             <required>false</required>
